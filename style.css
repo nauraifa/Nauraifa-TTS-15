@@ -1,0 +1,218 @@
+/* Reset sederhana agar tampilan konsisten */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #0f172a;
+  min-height: 100vh;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Background gradasi biru */
+.background-gradient {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top left, #3b82f6 0, transparent 55%),
+              radial-gradient(circle at bottom right, #22d3ee 0, transparent 55%);
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* Container utama */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+.header {
+  padding: 2.5rem 0 1.5rem;
+  text-align: center;
+  color: #e5e7eb;
+}
+
+.title {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+/* Kartu profil utama */
+.profile-card {
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  backdrop-filter: blur(16px);
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 720px) {
+  .profile-card {
+    grid-template-columns: 0.9fr 1.4fr;
+    align-items: center;
+  }
+}
+
+.profile-left {
+  text-align: center;
+  border-right: none;
+  padding-right: 0;
+}
+
+@media (min-width: 720px) {
+  .profile-left {
+    border-right: 1px solid rgba(148, 163, 184, 0.3);
+    padding-right: 1.5rem;
+  }
+}
+
+/* Avatar bulat */
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.7);
+}
+
+.avatar-initial {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #eff6ff;
+}
+
+.name {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+/* Bagian kanan profil */
+.profile-right h3 {
+  font-size: 1.05rem;
+  color: #bfdbfe;
+  margin-bottom: 0.75rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.info-item {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 0.15rem;
+}
+
+.value {
+  display: block;
+  font-size: 0.93rem;
+  color: #e5e7eb;
+}
+
+/* Kartu section lainnya */
+.section-card {
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 1.1rem;
+  padding: 1.5rem 1.5rem 1.4rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+  color: #e5e7eb;
+}
+
+.section-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  color: #bfdbfe;
+}
+
+.section-card p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  margin-bottom: 0.4rem;
+}
+
+/* Tag list hobi */
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.tag {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+  color: #eff6ff;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.6);
+}
+
+/* Kontak */
+.contact-list {
+  list-style: none;
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+.contact-list li + li {
+  margin-top: 0.2rem;
+}
+
+/* Footer */
+.footer {
+  padding: 1.75rem 0 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
